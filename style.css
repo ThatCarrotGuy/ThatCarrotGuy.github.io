@@ -33,3 +33,20 @@ nav .c-logo:hover {
 nav .c-logo:active {
     transform: scale(1.1, 1.1);
 }
+
+nav .s-logo{
+    border-radius: 50px;
+    width: 300px;
+    margin-top: 10%;
+    margin-left: 30%;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+nav .s-logo:hover {
+    transform: scale(1.2,1.2);
+}
+
+nav .s-logo:active {
+    transform: scale(1.1, 1.1);
+}
