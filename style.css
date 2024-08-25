@@ -25,11 +25,11 @@ p {
     top: 50%;
     left: 50%;
     -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-width: .3vw;
     transform: translate(-50%, -80%);
     color: #ffffff;
     font-family: pixel-writing;
-    font-size: 150px;
+    font-size: 10vw;
 }
 .sign {
     z-index: -1;
