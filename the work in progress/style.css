@@ -1,58 +1,31 @@
+html {
+    overflow: hidden; 
+    background: #1d2026;
+}
 *{
     margin: 0;
     padding: 0;
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
-
-    overflow: hidden; 
-}
-.stuff{
-    min-height: 100vh;
-    width: 100%;
-    position: relative;
-    /* So crisp. So clean.*/
-    image-rendering: optimizeSpeed;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: pixelated;
-    image-rendering: optimize-contrast;
-    -ms-interpolation-mode: nearest-neighbor;
-}
-
-.carrot-photo {
-    position: absolute;
-    margin-top: 30%;
-    width: 250px;
-    margin-left:83%;
-}
-.carrot-bubble {
-    width: 220px;
-    margin-top: 27%;
-    margin-left:67%;
 }
 .menu-buttons{
-    background: #1d2026;
     min-height: 100vh;
     width: 100%;
     color: #fff;
     position: absolute;
 }
 .c-logo, .s-logo{
-    width: 175px;
-    margin-top: 3%;
+    width: 25vw;
+    margin-top: 10%;
     margin-left: 3%;
-    vertical-align: top;
     display: inline-block;
-    zoom: 1;
     cursor: pointer;
     transition: transform 0.5s;
 }
 
 .c-logo, .s-logo  { 
-    border-radius: 30px;
+    border-radius: 3vw;
     max-width: 100%; 
-    height: auto; 
     width: auto\9;
 }
 
@@ -61,5 +34,10 @@
 }
 
 .menu-buttons:not(self) * :hover {
-    transform: scale(1.1,1.1);
+    transform: scale(1.12,1.12);
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
