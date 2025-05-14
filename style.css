@@ -1,47 +1,43 @@
-@font-face {
-    font-family: pixel-writing;
-    src: url(pixel-writing.ttf);
-}
 html {
+    overflow: hidden; 
     background: #1d2026;
-    overflow: hidden;
-
-    animation: sway 3s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
 }
 *{
-    /* So crisp. So clean.*/
-    image-rendering: optimizeSpeed;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: pixelated;
-    image-rendering: optimize-contrast;
-    -ms-interpolation-mode: nearest-neighbor;
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
 }
-p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-text-stroke-color: black;
-    -webkit-text-stroke-width: .2vw;
-    transform: translate(-50%, -80%);
-    color: #ffffff;
-    font-family: pixel-writing;
-    font-size: 9.5vw;
+.menu-buttons{
+    min-height: 100vh;
+    max-width: 100%;
+    color: #fff;
+    position: center;
 }
-.sign {
-    z-index: -1;
-    margin-top: -15%;
-    width: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.c-logo, .s-logo{
+    max-width: 5vw;
+    margin-top: 10%;
+    margin-left: 3%;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.5s;
 }
 
-@keyframes sway {
-    0% { transform: rotate(-3deg); }
-    50% { transform: rotate(3deg); }
-    100% { transform: rotate(-3deg); }
+.c-logo, .s-logo  { 
+    border-radius: 3vw;
+    max-width: 25vw; 
+    width: auto\9;
+}
+
+.menu-buttons:active {
+    transform: scale(1.0, 1.0);
+}
+
+.menu-buttons:not(self) * :hover {
+    transform: scale(1.12,1.12);
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
