@@ -13,8 +13,11 @@
 
 </head>
 <body>
-	<audio id="boom">
+	<audio id="boom" >
 		<source src ="images/boom.mp3">
+	</audio>
+  <audio id="squeak" >
+		<source src ="images/squeak.mp3">
 	</audio>
   <main class="container">
     <section class="top">
@@ -48,7 +51,8 @@
 
   <script>
     const gif = document.getElementById("main");
-    const audio = document.getElementById("boom");
+    const boom = document.getElementById("boom");
+    const squeak = document.getElementById("squeak");
     let clickCount = 0;
     let isDead = false;
 
@@ -58,11 +62,12 @@
       clickCount++;
     
     if (clickCount >= 5) {
-        audio.play();
+        boom.play();
               gif.src = "images/boom.gif";
               isDead = true;
         
       } else {
+        squeak.play();
           gif.src = "images/ouch.gif";
       }
 
