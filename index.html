@@ -61,9 +61,12 @@
   <script>
     const gif = document.getElementById("main");
 
+    gif.style.imageRendering = 'pixelated';
+
     // For my GIF randomizer
     const random = {
-      "images/whip.gif": 1500
+      "images/whip.gif": 1500,
+      "images/sneeze.gif": 700
       // Ill add extras when I get there
     };
     const names = Object.keys(random);
@@ -75,12 +78,19 @@
     let isDead = false;
 
     function doRandomGif() {
-      if (gif.dataset.locked === "true") return;
+      if (isDead) return;
 
       playing = true;
 
       const randomGif = names[Math.floor(Math.random() * names.length)];
+      console.log(randomGif);
       const dur = random[randomGif];
+
+      /*
+      if (randomGif === "images/sneeze.gif") {
+        boom.play();
+      }
+      */
 
       gif.src = randomGif;
 
