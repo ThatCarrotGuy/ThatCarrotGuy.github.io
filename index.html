@@ -60,10 +60,44 @@
 
   <script>
     const gif = document.getElementById("main");
+
+    // For my GIF randomizer
+    const random = {
+      "images/whip.gif": 1500
+      // Ill add extras when I get there
+    };
+    const names = Object.keys(random);
+    let playing = false;
+
     const boom = document.getElementById("boom");
     const squeak = document.getElementById("squeak");
     let clickCount = 0;
     let isDead = false;
+
+    function doRandomGif() {
+      if (gif.dataset.locked === "true") return;
+
+      playing = true;
+
+      const randomGif = names[Math.floor(Math.random() * names.length)];
+      const dur = random[randomGif];
+
+      gif.src = randomGif;
+
+      setTimeout(() => {
+        gif.src = "images/wiggle.gif";
+        playing = false;
+        scheduleNextGif();
+      }, dur);
+    }
+
+    function scheduleNextGif() {
+      const interval = Math.floor(Math.random() * 15000) + 10000; 
+      console.log(interval); // So if you want you can see how long until Carrot does something stupid
+      setTimeout(doRandomGif, interval);
+    } 
+
+    scheduleNextGif();
 
     gif.addEventListener("click", () => {
       if (isDead) return;
