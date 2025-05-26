@@ -1,45 +1,186 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'poppins', sans-serif;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
 }
 
-.stuff{
-    background: #1d2026;
-    min-height: 100vh;
-    width: 100%;
-    color: #fff;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: white;
+  background-image: radial-gradient(white 1px, transparent 1px),
+                    radial-gradient(white 1px, transparent 1px);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+  animation: moveStars 60s linear infinite;
 }
-.logo{
-    height: auto;
-    max-width: 40%;
-    margin: auto;
+
+@keyframes moveStars {
+  0% {
+    background-position: 0 0, 25px 25px;
+  }
+  100% {
+    background-position: 1000px 1000px, 1025px 1025px;
+  }
 }
-.progress {
-    position: relative;
-    width: 80%;
-    height: 50px;
-    background: #3a4863;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: auto;
+
+.container {
+  max-width: 1000px;
+  margin: auto;
 }
-.fill {
-    position: relative;
-    width: 2%;
-    height: 100%;
-    background: #2bcc6c;
+
+.logo {
+  text-align: center;
+  margin: 3rem 0 2rem 0;
 }
-.text {
-    position: absolute;
-    top: 30%;
-    right: 50%;
-    font: bold 18px 'Quicksand', sans-serif;
-    transform: translateX(50%);
+
+.logo img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
 }
-nav{
-    display: flex;
+
+.progress-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  height: 24px;
+  background-color: #333;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 10px #0006;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 2%; /* DON'T FORGET, THIS CHANGES THE PROGRESS BAR. */
+  background-color: #942f2f;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.progress-text {
+  z-index: 2;
+}
+
+.description p,
+.notes p {
+  background: #222;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  line-height: 1.6;
+}
+
+.screenshots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.screenshots img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+}
+.screenshots img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.download {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.download a {
+  padding: 0.75rem 2rem;
+  background: #85ff77;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #49a040;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.download a:hover {
+  background: #489c3f;
+  transform: scale(1.05);
+}
+
+.notes h2 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .screenshots {
+    flex-direction: column;
     align-items: center;
-    padding: 20px 8%;
+  }
+
+  .screenshots img {
+    max-width: 90%;
+  }
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #fff5;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 20px;
+  transform: translateY(-50%);
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
 }
