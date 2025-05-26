@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrot's Local Domain</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Carrot's Local Domain" />
+    <meta property="og:description" content="A cool collection of indie games made by yours truely!" />
+    <meta property="og:image" content="https://thatcarrotguy.github.io/games/slimeshift/images/Logo.png" />
+    <meta property="og:url" content="https://thatcarrotguy.github.io" />
+
+</head>
+<body>
+	<audio id="boom">
+		<source src ="images/boom.mp3">
+	</audio>
+  <main class="container">
+    <section class="top">
+      <div class="about-me">
+        <p>Heyo! I'm Isaiah, often reffered to as "Carrot" online. I'm a game developer, sprite artist, and a soon to be musician! I started my journey into game development when I was 14, since then I have created two games I have released into the public. My game engines of choice are, GameMaker Studio 2, and Godot. I have also worked with Java, C#, Lua, HaxeFlixel, and Python.</p>
+      </div>
+      <div class="animated-image">
+        <img id="main" src="images/wiggle.gif" alt="Animated Gif">
+      </div>
+    </section>
+
+    <section class="games">
+      <button onclick="location.href='games/carrotquest/index.html'">
+        <img src="images/quest.png" alt="Carrot Quest">
+      </button>
+      <button onclick="location.href='games/slimeshift/index.html'">
+        <img src="images/slime.png" alt="Slime Shift">
+      </button>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="socials">
+        <a href="https://x.com/thatcarrotguy" target="_blank">Twitter</a>
+        <a href="https://www.youtube.com/@ThatCarrotGuy" target="_blank">YouTube</a>
+        <a href="https://discord.gg/amkt3vPQCY" target="_blank">Discord</a>
+      </div>
+      <p>&copy; 2025 ThatCarrotGuy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const gif = document.getElementById("main");
+    const audio = document.getElementById("boom");
+    let clickCount = 0;
+    let isDead = false;
+
+    gif.addEventListener("click", () => {
+      if (isDead) return;
+
+      clickCount++;
+    
+    if (clickCount >= 5) {
+        audio.play();
+              gif.src = "images/boom.gif";
+              isDead = true;
+        
+      } else {
+          gif.src = "images/ouch.gif";
+      }
+
+      setTimeout(() => {
+        if (clickCount >= 5) {
+          // Just do nothing. Look pretty!
+          isDead = true;
+        } else {
+          gif.src = "images/wiggle.gif";
+        }
+      }, 330);
+    });
+  </script>
+</body>
+</html>

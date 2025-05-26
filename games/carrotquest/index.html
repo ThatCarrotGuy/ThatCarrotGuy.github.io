@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Carrot Quest</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+        <img src="logo.png" alt="The Carrot Quest Logo">
+    </div>
+
+    <section class="screenshots">
+      <img src="images/screenshot1.png" alt="Carrot Quest Screenshot 1">
+      <img src="images/screenshot2.png" alt="Carrot Quest Screenshot 2">
+      <img src="images/screenshot3.png" alt="Carrot Quest Screenshot 3">
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Expanded Screenshot">
+        <div class="arrow left" id="prev">&#10094;</div>
+        <div class="arrow right" id="next">&#10095;</div>
+    </div>
+    
+    <section class="notes">
+      <h2>Developer Notes</h2>
+      <p>
+        This game is no longer maintained as of 2022. I actually really dislike this game. It just became a chore to work on, 
+        especially since I was only 14 at the time and all of my code was unreadable. 
+        I have decided to keep it avaliable just for keepsakes. 
+        This game was made in Unity over the course of a couple of years.
+      </p>
+    </section>
+
+    <section class="description">
+      <p>
+        This game, (<i>if you can even call it that</i>), is incredibly unfinished, as half of us have no idea what we're doing. 
+        You can either play this unfinished mess of a "game" now if you want, or come back in a year or so when we make something actually playable. 
+        Thank you, and feel free to leave mean comments. We won't stop you.
+      </p>
+    </section>
+
+    <section class="download">
+      <a href="carrotquest-download.zip" download>Download The Carrot Quest</a>
+    </section>
+
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.screenshots img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox .close');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    let currentIndex = 0;
+
+    images.forEach((img, index) => {
+        img.addEventListener('click', () => {
+        currentIndex = index;
+        showLightbox();
+        });
+    });
+
+    function showLightbox() {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = images[currentIndex].src;
+    }
+
+    function closeLightbox() {
+        lightbox.style.display = 'none';
+    }
+
+    function showNext() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showLightbox();
+    }
+
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showLightbox();
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+
+    window.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'flex') {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
+        }
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+    </script>
+
+</body>
+</html>
