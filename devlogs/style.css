@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  flex: 1;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: white;
+  background-image: radial-gradient(white 1px, transparent 1px),
+                    radial-gradient(white 1px, transparent 1px);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+  animation: moveStars 60s linear infinite;
+}
+
+main {
+  flex: 1;
+}
+@keyframes moveStars {
+  0% {
+    background-position: 0 0, 25px 25px;
+  }
+  100% {
+    background-position: 1000px 1000px, 1025px 1025px;
+  }
+}
+
+.devlogs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem;
+    gap: 2rem;
+}
+
+.box {
+  position: relative;
+  max-width: 800px;
+  background-color: rgba(45, 44, 55, 0.75);
+  padding: 2rem;
+  border-radius: 12px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  margin-bottom: 2rem;
+}
+
+.box ul {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.box li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.goto {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background-color: #222;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.goto:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+.back-button {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #222;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 1000;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #444;
+  transform: translateX(-50%) scale(1.05);
+}
+h2 {
+    margin-bottom: 1rem;
+}
+
+p + p {
+    margin-top: 1rem;
+}
