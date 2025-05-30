@@ -40,7 +40,7 @@ main {
 .box {
   position: relative;
   max-width: 800px;
-  background-color: rgba(45, 44, 55, 0.75);
+  background-color: #222;
   padding: 2rem;
   border-radius: 12px;
   color: white;
@@ -48,6 +48,24 @@ main {
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
   margin-bottom: 2rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  vertical-align: middle;
+  /* Not ideal, but I am gonna have to nudge it each image I use.. */
+  position: relative;
+  top: -10px;
+
+  image-rendering: pixelated;
 }
 
 .box ul {
@@ -74,6 +92,12 @@ main {
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+@media (max-width: 600px) {
+  .goto {
+    display: none;
+  }
 }
 
 .goto:hover {
