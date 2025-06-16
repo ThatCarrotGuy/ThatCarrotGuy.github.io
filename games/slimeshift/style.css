@@ -55,7 +55,7 @@ body {
 
 .progress-bar {
   height: 100%;
-  width: 2%; /* DON'T FORGET, THIS CHANGES THE PROGRESS BAR. */
+  width: 5%; /* DON'T FORGET, THIS CHANGES THE PROGRESS BAR. */
   background-color: #942f2f;
   position: relative;
   display: flex;
