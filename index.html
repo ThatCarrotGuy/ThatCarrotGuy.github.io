@@ -69,9 +69,9 @@
 
     // For my GIF randomizer
     const random = {
-      "images/whip.gif": 1500,
-      "images/sneeze.gif": 700
-      // Ill add extras when I get there
+      "images/whip.gif": 1560,
+      "images/sneeze.gif": 600,
+      "images/blink.gif": 400
     };
     const names = Object.keys(random);
     let playing = false;
@@ -91,9 +91,12 @@
       const dur = random[randomGif];
 
       /*
+      Haven't decided if I want a sfx for this yet :p
+
       if (randomGif === "images/sneeze.gif") {
         boom.play();
       }
+
       */
 
       gif.src = randomGif;
@@ -106,9 +109,17 @@
     }
 
     function scheduleNextGif() {
-      const interval = Math.floor(Math.random() * 15000) + 10000; 
-      console.log(interval); // So if you want you can see how long until Carrot does something stupid
-      setTimeout(doRandomGif, interval);
+      const doGif = Math.floor(Math.random() * 1000)
+      console.log(doGif); 
+
+      // Now It's luck based :)
+      if (doGif == 0) {
+        setTimeout(doRandomGif);
+      } else {
+        setTimeout(() => {
+        scheduleNextGif();
+      }, 3000);
+      }
     } 
 
     scheduleNextGif();
@@ -135,7 +146,7 @@
         } else {
           gif.src = "images/wiggle.gif";
         }
-      }, 330);
+      }, 500);
     });
   </script>
 </body>
