@@ -47,7 +47,7 @@ body {
   margin: 1.5rem auto;
   height: 24px;
   background-color: #333;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   position: relative;
   box-shadow: 0 0 10px #0006;
@@ -55,8 +55,8 @@ body {
 
 .progress-bar {
   height: 100%;
-  width: 5%; /* DON'T FORGET, THIS CHANGES THE PROGRESS BAR. */
-  background-color: #942f2f;
+  width: 10%; /* This changes the progress bar's percentage */
+  background-color: #ae6239;
   position: relative;
   display: flex;
   align-items: center;
@@ -74,7 +74,7 @@ body {
 .notes p {
   background: #222;
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
   line-height: 1.6;
 }

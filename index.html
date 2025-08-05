@@ -78,8 +78,12 @@
 
     const boom = document.getElementById("boom");
     const squeak = document.getElementById("squeak");
+
+    boom.volume = 0.3;
+    squeak.volume = 0.4;
     let clickCount = 0;
     let isDead = false;
+    let cooldown = false;
 
     function doRandomGif() {
       if (isDead) return;
@@ -125,9 +129,15 @@
     scheduleNextGif();
 
     gif.addEventListener("click", () => {
-      if (isDead) return;
+      if (isDead || cooldown) return;
 
       clickCount++;
+      cooldown = true;
+
+    // Let's the animation finish before allowing you to click again.
+    setTimeout(() => {
+        cooldown = false; 
+    }, 500); 
     
     if (clickCount >= 5) {
         boom.play();
