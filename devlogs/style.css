@@ -68,6 +68,14 @@ main {
   image-rendering: pixelated;
 }
 
+.glup {
+  width: 164px;
+  height: 164px;
+  display: flex;
+  padding: 20px;
+  margin: auto;
+}
+
 .box ul {
   padding-left: 1.5rem;
   margin-top: 1rem;

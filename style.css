@@ -10,6 +10,7 @@ html, body {
   padding: 0;
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
 }
 
 body {
@@ -41,7 +42,7 @@ main {
   padding: 5vw;
 }
 
-.about-me, .animated-image {
+.about-me, .boy {
   flex: 1;
   background-color: #222;
   padding: 1.5rem;
@@ -78,7 +79,7 @@ main {
   gap: 2rem;
   margin-bottom: 3rem;
 }
-.animated-image {
+.boy {
   flex: 0 0 auto;
   width: 128px;
   height: 128px;
@@ -87,7 +88,7 @@ main {
   justify-content: center;
 }
 
-.animated-image img {
+.boy img {
   width: 128px;
   height: 128px;
   object-fit: contain;
@@ -132,7 +133,7 @@ main {
     flex: 1 1 100%;
   }
 
-  .animated-image {
+  .boy {
     display: none;
   }
 
@@ -146,7 +147,6 @@ main {
   padding: 2rem 1rem;
   color: white;
   text-align: center;
-  margin-top: 6rem;
 }
 
 .site-footer a {
